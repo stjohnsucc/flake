@@ -31,4 +31,4 @@ jobs:
         if: ${{ steps.update.outputs.pull-request-number != '' }}
         run: gh pr merge --auto "${{ steps.update.outputs.pull-request-number }}" --rebase
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FLAKE_PAT }}
