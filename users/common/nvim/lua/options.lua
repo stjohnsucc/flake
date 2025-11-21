@@ -1,0 +1,16 @@
+vim.opt.clipboard = 'unnamedplus' -- system clipboard
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.mouse = 'a' --allow mouse
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.number = true
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.colorcolumn = '72'

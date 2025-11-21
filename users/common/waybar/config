@@ -1,0 +1,109 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 45, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 0, // Gaps between modules (4px)
+  // Choose the order of the modules
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-right": ["tray", "backlight", "memory", "cpu", "network", "bluetooth", "pulseaudio", "battery", "clock"],
+  "sway/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󰨞",
+      "4": "󰭹",
+      "5": "",
+      "6": "󱓷",
+      "7": "",
+      "8": "󰟵",
+      "9": "",
+      "10": "",
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
+    },
+  },
+  "backlight": {
+    "format": " {}%",
+  },
+  "memory": {
+    "interval": 5,
+    "format": "󰍛 {}%",
+    "max-length": 10,
+  },
+  "tray": {
+    "spacing": 10,
+  },
+  "clock": {
+    "format": "{:%Y.%m.%d  %H:%M}",
+  },
+  "network": {
+    "format-wifi": "{icon}",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "interval": 5,
+    "nospacing": 1,
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "󰂰",
+    "nospacing": 1,
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "",
+      "default": ["󰖀", "󰕾", ""],
+    },
+  },
+  "wireplumber": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "",
+      "default": ["󰖀", "󰕾", ""],
+    },
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10,
+    },
+  },
+  "cpu": {
+    "interval": 1,
+    "format": " {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
+    "format-icons": [
+      "<span color='#8de698'>▁</span>",
+      "<span color='#8de698'>▂</span>",
+      "<span color='#8de698'>▃</span>",
+      "<span color='#ffc057'>▄</span>",
+      "<span color='#ffc057'>▅</span>",
+      "<span color='#ff9c5b'>▆</span>",
+      "<span color='#ff9c5b'>▇</span>",
+      "<span color='#ff888c'>█</span>"
+    ]
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "󰂲",
+    "format-connected": " {num_connections} connected",
+    "format-no-controller": "",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  },
+}
