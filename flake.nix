@@ -11,13 +11,15 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, lanzaboote, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, lanzaboote, home-manager, nixos-hardware, ... }@inputs: {
     nixosConfigurations.yggdrasil = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/yggdrasil
+        #nixos-hardware.nixosModules.lenovo-legion-15ach6
         lanzaboote.nixosModules.lanzaboote
         ({ pkgs, lib, ... }: {
           boot.loader.systemd-boot.enable = lib.mkForce false;
