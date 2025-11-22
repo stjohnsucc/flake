@@ -36,46 +36,7 @@
   services = {
     kanshi.enable = true;
     mako.enable = true;
-    swayidle = {
-    let
-      lock = "${pkgs.swaylock-effects}/bin/swaylock -f --screenshots --effect-blur 7x5";
-      display = status: "swaymsg 'output * power ${status}'"; \
-    in 
-      enable = true;
-      timeouts = [
-        {
-          timeout = 300;
-          command = lock;
-        }
-        {
-          timeout = 360;
-          command = display "off";
-          resumeCommand = display "on";
-        }
-        {
-          timeout = 600;
-          command = "${pkgs.systemd}/bin/systemctl suspend";
-        }
-      ];
-      events = [
-        {
-          event = "before-sleep";
-          command = (display "off") + "; " + lock;
-        }
-        {
-          event = "after-resume";
-          command = display "on";
-        }
-        {
-          event = "lock";
-          command = (display "off") + "; " + lock;
-        }
-        {
-          event = "unlock";
-          command = display "on";
-        }
-      ];
-    };
+    swayidle.enable = true;
     polkit-gnome.enable = true;
   };
 
