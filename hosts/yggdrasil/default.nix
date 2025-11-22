@@ -15,7 +15,6 @@
       ../../modules/packages/common
       ../../modules/packages/design/gimp.nix
       ../../modules/packages/design/tenacity.nix
-      ../../modules/packages/misc/alpaca.nix
       ../../modules/packages/net
       ../../modules/packages/office
     ];
