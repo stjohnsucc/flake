@@ -10,7 +10,7 @@
   };
 
   outputs = { self, nixpkgs, lanzaboote, ... }@inputs: {
-    nixosConfigurations.yggdrasil = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.wsnorth = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/wsnorth

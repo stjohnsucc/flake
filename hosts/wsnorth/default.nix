@@ -7,7 +7,6 @@
       ./hardware-configuration.nix
       ../../desktop/plasma.nix
       ../../desktop/plymouth.nix
-      ../../desktop/tuigreet.nix
       ../../modules/network.nix
       ../../modules/system.nix
       ../../modules/editors
@@ -19,6 +18,8 @@
     ];
 
   networking.hostName = "wsnorth";
+
+  boot.loader.grub.device = "/dev/disk/by-uuid/0b828703-7727-4203-8274-866a4fa23b18";
 
   users = {
     users.admin = {
