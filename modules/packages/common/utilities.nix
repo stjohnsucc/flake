@@ -5,6 +5,7 @@
     cmatrix
     dosfstools
     fastfetch
+    lshw
     ntfs3g
     nyancat
     p7zip
