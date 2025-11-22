@@ -5,7 +5,9 @@
   imports = 
     [
       ./hardware-configuration.nix
-      ../../desktop/gnome.nix
+      ../../desktop/plymouth.nix
+      ../../desktop/sway.nix
+      ../../desktop/tuigreet.nix
       ../../modules/network.nix
       ../../modules/system.nix
       ../../modules/editors
