@@ -10,7 +10,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --time -r -g 'Digital Gate active...' --cmd 'sway'";
+          command = "${pkgs.tuigreet}/bin/tuigreet --time -r -g 'Digital Gate active...' --cmd 'sway --unsupported-gpu'";
           user = "greeter";
         };
       };
