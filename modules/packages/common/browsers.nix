@@ -6,7 +6,8 @@
   programs.chromium = {
     enable = true;
     extensions = [
-      "nngceckbapebfimnlniiiahkandclblb"
+      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+      "ddkjiahejlhfcafbddmgiahcphecmpfh" # uBlock Origin Lite
     ];
     extraOpts = {
       "AIModeSettings" = 1;
