@@ -15,4 +15,7 @@
     phinger-cursors
     yaru-theme
   ];
+  environment.gnome.excludePackages = with pkgs; [
+    epiphany
+  ];
 }

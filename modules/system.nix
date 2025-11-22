@@ -72,7 +72,7 @@
         name = "WF-C869R";
         location = "Home";
         deviceUri = "dnssd://EPSON%20WF-C869R%20Series._ipp._tcp.local/?uuid=cfe92100-67c4-11d4-a45f-f8d0272737f5";
-        model = "drv:///sample.drv/generic.ppd";
+        model = "drv:///epson-inkjet-printer-escpr2/Epson-WF-C869R_Series-epson-escpr2-en.ppd";
         ppdOptions = {
           PageSize = "Letter";
           ColorModel = "Gray";
