@@ -19,7 +19,7 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/yggdrasil
-        #nixos-hardware.nixosModules.lenovo-legion-15ach6
+        nixos-hardware.nixosModules.lenovo-legion-15ach6
         lanzaboote.nixosModules.lanzaboote
         ({ pkgs, lib, ... }: {
           boot.loader.systemd-boot.enable = lib.mkForce false;
