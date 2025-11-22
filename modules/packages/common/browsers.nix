@@ -5,6 +5,9 @@
   ];
   programs.chromium = {
     enable = true;
+    extensions = [
+      "nngceckbapebfimnlniiiahkandclblb"
+    ];
     extraOpts = {
       "AIModeSettings" = 1;
       "AlternateErrorPagesEnabled" = false;
