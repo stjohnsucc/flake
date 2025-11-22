@@ -11,8 +11,8 @@
       git pull --ff-only
     '';
     serviceConfig = {
-      WorkingDirectory = "/home/evelyn/flake-lively";
-      User = "evelyn";
+      WorkingDirectory = "/etc/nixos";
+      User = "admin";
       Type = "oneshot";
     };
   };
@@ -22,12 +22,12 @@
     restartIfChanged = false;
     path = [pkgs.nixos-rebuild pkgs.systemd];
     script = ''
-      nixos-rebuild boot --flake /home/evelyn/flake-lively
+      nixos-rebuild boot
       booted="$(readlink /run/booted-system/{initrd,kernel,kernel-modules})"
       built="$(readlink /nix/var/nix/profiles/system/{initrd,kernel,kernel-modules})"
   
       if [ "''${booted}" = "''${built}" ]; then
-        nixos-rebuild switch --flake /home/evelyn/flake-lively
+        nixos-rebuild switch
       else
         echo "System built but not booted. Manual reboot required."
       fi

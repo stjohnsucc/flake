@@ -59,6 +59,26 @@
       enable = true;
       openFirewall = true;
     };
+    printing = {
+      enable = true;
+      drivers = with pkgs; [ epson-escpr epson-escpr2 gutenprint hplip splix ];
+      openFirewall = true;
+    };
+  };
+  hardware.printers = {
+    ensurePrinters = [
+      {
+        name = "WF-C869R";
+        location = "Home";
+        deviceUri = "dnssd://EPSON%20WF-C869R%20Series._ipp._tcp.local/?uuid=cfe92100-67c4-11d4-a45f-f8d0272737f5";
+        # model = "drv:///sample.drv/generic.ppd";
+        ppdOptions = {
+          PageSize = "Letter";
+          ColorModel = "Gray";
+        };
+      }
+    ];
+    ensureDefaultPrinter = "WF-C869R";
   };
   security.rtkit.enable = true;
   nixpkgs.config.allowUnfree = true;

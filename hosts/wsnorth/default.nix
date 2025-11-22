@@ -5,13 +5,12 @@
   imports = 
     [
       ./hardware-configuration.nix
+      ../../desktop/plasma.nix
       ../../desktop/plymouth.nix
-      ../../desktop/sway.nix
       ../../desktop/tuigreet.nix
       ../../modules/network.nix
       ../../modules/system.nix
       ../../modules/editors
-      ../../modules/editors/racket.nix
       ../../modules/packages/common
       ../../modules/packages/design/gimp.nix
       ../../modules/packages/design/tenacity.nix
@@ -19,14 +18,19 @@
       ../../modules/packages/office
     ];
 
-  networking.hostName = "yggdrasil";
+  networking.hostName = "wsnorth";
 
   users = {
-    mutableUsers = true;
+    users.admin = {
+      isNormalUser = true;
+      description = "Administrator";
+      extraGroups = [ "wheel" "networkmanager" ];
+      packages = with pkgs; [];
+    };
     users.evelyn = {
       isNormalUser = true;
       description = "Evelyn Park";
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [ "networkmanager" ];
       packages = with pkgs; [];
     };
   };
