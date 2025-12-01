@@ -1,15 +1,23 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    chromium
+    google-chrome
   ];
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
-      "ddkjiahejlhfcafbddmgiahcphecmpfh" # uBlock Origin Lite
-    ];
-    extraOpts = {
+  nixpkgs.config.google-chrome.commandLineArgs = [
+    "--enable-features=CapReferrerToOriginOnCrossOrigin,ContentSettingsPartitioning,EnableCsrssLockdown,HstsTopLevelNavigationsOnly,LocalNetworkAccessChecks:LocalNetworkAccessChecksWarn/false,LocalNetworkAccessChecksWebRTC,PartitionConnectionsByNetworkIsolationKey,ReduceAcceptLanguage,SplitCodeCacheByNetworkIsolationKey,SplitCacheByNetworkIsolationKey,SplitCacheByIncludeCredentials,SplitCacheByNavigationInitiator,StrictOriginIsolation"
+    "--disable-features=AllowSwiftShaderFallback,AllowSoftwareGLFallbackDueToCrash,AutofillServerCommunication,BrowsingTopics,BrowsingTopicsDocumentAPI,BrowsingTopicsParameters,InterestFeedV2,NTPPopularSitesBakedInContent,UsePopularSitesSuggestions,LensStandalone,MediaDrmPreprovisioning,OptimizationHints,OptimizationHintsFetching,OptimizationHintsFetchingAnonymousDataConsent,OptimizationPersonalizedHintsFetching,OptimizationGuideModelDownloading,TextSafetyClassifier,PrivacySandboxSettings4,Reporting,CrashReporting,DocumentReporting,TabHoverCardImages,WebGPUBlobCache,WebGPUService"
+    "--component-updater=--disable-pings"
+    "--disable-breakpad"
+    "--disable-crash-reporter"
+    "--extension-content-verification=enforce_strict"
+    "--extensions-install-verification=enforce_strict"
+    "--js-flags=--jitless"
+    "--js-flags=--disable-optimizing-compilers"
+    "--no-pings"
+    "--ozone-platform=$XDG_SESSION_TYPE"
+  ];
+  environment.etc."opt/chrome/policies/managed/default.json".text =
+    builtins.toJSON {
       "AIModeSettings" = 1;
       "AlternateErrorPagesEnabled" = false;
       "AudioSandboxEnabled" = true;
@@ -96,18 +104,11 @@
       "WebRtcTextLogCollectionAllowed" = false;
       "WebUsbAskForUrls" = ["https://grapheneos.org"];
     };
-  };
-  nixpkgs.config.chromium.commandLineArgs = [
-    "--enable-features=CapReferrerToOriginOnCrossOrigin,ContentSettingsPartitioning,EnableCsrssLockdown,HstsTopLevelNavigationsOnly,LocalNetworkAccessChecks:LocalNetworkAccessChecksWarn/false,LocalNetworkAccessChecksWebRTC,PartitionConnectionsByNetworkIsolationKey,ReduceAcceptLanguage,SplitCodeCacheByNetworkIsolationKey,SplitCacheByNetworkIsolationKey,SplitCacheByIncludeCredentials,SplitCacheByNavigationInitiator,StrictOriginIsolation"
-    "--disable-features=AllowSwiftShaderFallback,AllowSoftwareGLFallbackDueToCrash,AutofillServerCommunication,BrowsingTopics,BrowsingTopicsDocumentAPI,BrowsingTopicsParameters,InterestFeedV2,NTPPopularSitesBakedInContent,UsePopularSitesSuggestions,LensStandalone,MediaDrmPreprovisioning,OptimizationHints,OptimizationHintsFetching,OptimizationHintsFetchingAnonymousDataConsent,OptimizationPersonalizedHintsFetching,OptimizationGuideModelDownloading,TextSafetyClassifier,PrivacySandboxSettings4,Reporting,CrashReporting,DocumentReporting,TabHoverCardImages,WebGPUBlobCache,WebGPUService"
-    "--component-updater=--disable-pings"
-    "--disable-breakpad"
-    "--disable-crash-reporter"
-    "--extension-content-verification=enforce_strict"
-    "--extensions-install-verification=enforce_strict"
-    "--js-flags=--jitless"
-    "--js-flags=--disable-optimizing-compilers"
-    "--no-pings"
-    "--ozone-platform=$XDG_SESSION_TYPE"
-  ];
+  
+  environment.etc."opt/chrome/policies/managed/extensions.json".text =
+    builtins.toJSON {
+      ExtensionInstallForcelist = [
+        "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+      ];
+    };
 }

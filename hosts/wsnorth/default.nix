@@ -19,20 +19,14 @@
   networking.hostName = "wsnorth";
 
   users = {
-    users.admin = {
-      isNormalUser = true;
-      description = "Administrator";
-      extraGroups = [ "wheel" "networkmanager" ];
-      packages = with pkgs; [];
-    };
     users.evelyn = {
       isNormalUser = true;
       description = "Evelyn Park";
-      extraGroups = [ "networkmanager" ];
+      extraGroups = [ "wheel" "networkmanager" ];
       packages = with pkgs; [];
     };
   };
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 
 }

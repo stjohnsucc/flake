@@ -2,8 +2,7 @@
 {
   imports = 
     [
-      ./browsers.nix
-      ./players.nix
+      ./chrome.nix
       ./utilities.nix
     ];
 

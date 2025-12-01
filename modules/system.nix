@@ -65,6 +65,7 @@
       drivers = with pkgs; [ epson-escpr epson-escpr2 gutenprint hplip splix ];
       openFirewall = true;
     };
+    avahi.enable = true;
   };
   hardware.printers = {
     ensurePrinters = [
