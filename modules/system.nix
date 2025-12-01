@@ -64,8 +64,20 @@
       enable = true;
       drivers = with pkgs; [ epson-escpr epson-escpr2 gutenprint hplip splix ];
       openFirewall = true;
+      listenAddresses = [ "*:631" ];
+      allowFrom = [ "all" ];
+      browsing = true;
+      defaultShared = true;
     };
-    avahi.enable = true;
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+      publish = {
+        enable = true;
+        userServices = true;
+      };
+    };
     xserver.xkb = {
       layout = "us";
       variant = "colemak";
@@ -75,7 +87,8 @@
   hardware.printers = {
     ensurePrinters = [
       {
-        name = "WF-C869R";
+        name = "EPSON_WF-C869R_Series";
+        description = "EPSON_WF-C869R_Series";
         location = "Home";
         deviceUri = "dnssd://EPSON%20WF-C869R%20Series._ipp._tcp.local/?uuid=cfe92100-67c4-11d4-a45f-f8d0272737f5";
         model = "epson-inkjet-printer-escpr2/Epson-WF-C869R_Series-epson-escpr2-en.ppd";
@@ -85,7 +98,7 @@
         };
       }
     ];
-    ensureDefaultPrinter = "WF-C869R";
+    ensureDefaultPrinter = "EPSON_WF-C869R_Series";
   };
   security.rtkit.enable = true;
   nixpkgs.config.allowUnfree = true;
