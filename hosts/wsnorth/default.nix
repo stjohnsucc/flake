@@ -6,7 +6,6 @@
     [
       ./hardware-configuration.nix
       ../../desktop/gnome.nix
-      ../../desktop/plymouth.nix
       ../../modules/network.nix
       ../../modules/system.nix
       ../../modules/editors

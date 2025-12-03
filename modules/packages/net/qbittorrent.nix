@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
-  environment.systemPackages = with pkgs; [
-    qbittorrent
+  services.flatpak.packages = [
+    "org.qbittorrent.qBittorrent"
   ];
 }

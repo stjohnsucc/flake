@@ -78,12 +78,7 @@
         userServices = true;
       };
     };
-    xserver.xkb = {
-      layout = "us";
-      variant = "colemak";
-    };
   };
-  console.useXkbConfig = true;
   hardware.printers = {
     ensurePrinters = [
       {

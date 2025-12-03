@@ -6,6 +6,9 @@
   services = {
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+    flatpak.packages = [
+      "org.gtk.Gtk3theme.adw-gtk3-dark"
+    ];
   };
   environment.systemPackages = with pkgs; [
     adw-gtk3

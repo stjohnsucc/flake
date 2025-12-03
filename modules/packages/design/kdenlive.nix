@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
-  environment.systemPackages = with pkgs; [
-    kdePackages.kdenlive
+  services.flatpak.packages = [
+    "org.kde.kdenlive"
   ];
 }
