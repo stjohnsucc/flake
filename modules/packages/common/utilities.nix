@@ -5,6 +5,7 @@
     cmatrix
     dosfstools
     fastfetch
+    go
     hugo
     lshw
     nodejs
