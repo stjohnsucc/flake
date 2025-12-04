@@ -5,7 +5,9 @@
     cmatrix
     dosfstools
     fastfetch
+    hugo
     lshw
+    nodejs
     ntfs3g
     nyancat
     p7zip
