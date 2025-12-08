@@ -47,8 +47,8 @@
       "DesktopSharingHubEnabled" = false;
       "DevToolsGenAiSettings" = 2;
       "Disable3DAPIs" = true;
-      #"DnsOverHttpsMode" = "secure";
-      #"DnsOverHttpsTemplates" = "https://freedns.controld.com/p2";
+      "DnsOverHttpsMode" = "secure";
+      "DnsOverHttpsTemplates" = "https://freedns.controld.com/p2";
       "EnableMediaRouter" = false;
       "GeminiSettings" = 1;
       "GenAILocalFoundationalModelSettings" = 1;
