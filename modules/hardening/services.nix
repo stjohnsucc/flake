@@ -3,7 +3,7 @@
   environment.extraInit = "umask 0077";
   services = {
     # accounts-daemon.enable = false;
-    avahi.enable = false;
+    #avahi.enable = false;
     chrony = {
       enable = true;
       enableNTS = true;
