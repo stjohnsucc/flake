@@ -51,6 +51,15 @@
     };
   };
   services = {
+    flatpak = {
+      enable = true;
+      remotes = lib.mkOptionDefault [{
+        name = "flathub";
+        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      }];
+      update.auto.enable = true;
+      uninstallUnmanaged = true;
+    };
     pipewire = {
       enable = true;
       pulse.enable = true;
