@@ -1,6 +1,6 @@
 { ... }:
 {
-  services.flatpak.packages = [
-    "com.obsproject.Studio"
+  environment.systemPackages = with pkgs; [
+    obs-studio
   ];
 }
