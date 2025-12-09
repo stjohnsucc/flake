@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  environment.systemPackages = with pkgs; [
-    gimp
+  services.flatpak.packages = [
+    "org.gimp.GIMP"
   ];
 }
