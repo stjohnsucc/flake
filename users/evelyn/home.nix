@@ -18,7 +18,7 @@
     bash = {
       enable = true;
       shellAliases = {
-        garbage = "nix-store --optimise ; nix-collect-garbage -d ; run0 nix-store --optimise ; run0 nix-collect-garbage -d";
+        garbage = "nix-store --optimise ; nix-collect-garbage -d ; sudo nix-store --optimise ; sudo nix-collect-garbage -d";
       };
       bashrcExtra = ''
         eval "$(starship init bash)"
