@@ -18,7 +18,6 @@
     bash = {
       enable = true;
       shellAliases = {
-        sudo = "run0";
         garbage = "nix-store --optimise ; nix-collect-garbage -d ; run0 nix-store --optimise ; run0 nix-collect-garbage -d";
       };
       bashrcExtra = ''
