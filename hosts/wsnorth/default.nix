@@ -9,7 +9,6 @@
       ../../modules/network.nix
       ../../modules/system.nix
       ../../modules/editors
-      ../../modules/hardening
       ../../modules/packages/common
       ../../modules/packages/design
       ../../modules/packages/net
