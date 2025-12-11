@@ -27,7 +27,7 @@
     users.evelyn = {
       isNormalUser = true;
       description = "Evelyn Park";
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [ "networkmanager" ];
       packages = with pkgs; [];
     };
   };
