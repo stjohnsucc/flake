@@ -25,4 +25,8 @@
   programs = {
     yazi.enable = true;
   };
+
+  services.flatpak.packages = [
+    "org.freac.freac"
+  ];
 }
