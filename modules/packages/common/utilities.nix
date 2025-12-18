@@ -16,6 +16,8 @@
     rclone
     unrar
     unzip
+    winetricks
+    wineWowPackages.stable
     yt-dlp
     zola
   ];
