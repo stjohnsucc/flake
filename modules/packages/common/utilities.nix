@@ -27,6 +27,7 @@
   };
 
   services.flatpak.packages = [
+    "org.fedoraproject.MediaWriter"
     "org.freac.freac"
   ];
 }
