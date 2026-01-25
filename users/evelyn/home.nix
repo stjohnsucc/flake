@@ -42,9 +42,6 @@
     configFile = {
       "fastfetch/config.jsonc".source = ../common/fastfetch/config.jsonc;
       "nvim/init.lua".source = ../common/nvim/init.lua;
-      "nvim/lua/keymaps.lua".source = ../common/nvim/lua/keymaps.lua;
-      "nvim/lua/options.lua".source = ../common/nvim/lua/options.lua;
-      "nvim/lua/plugins.lua".source = ../common/nvim/lua/plugins.lua;
       "starship/starship.toml".source = ../common/starship/starship.toml;
     };
   };

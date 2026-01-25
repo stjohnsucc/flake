@@ -6,8 +6,7 @@
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
       esbenp.prettier-vscode
-      james-yu.latex-workshop
-      jdinhlife.gruvbox
+      myriad-dreamin.tinymist
       tamasfe.even-better-toml
       vscodevim.vim
     ];

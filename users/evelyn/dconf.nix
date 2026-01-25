@@ -10,7 +10,7 @@ with lib.hm.gvariant;
       default-columns = mkUint32 120;
       default-profile-uuid = "e29d8a2a7f3956c6729ce526692fe833";
       default-rows = mkUint32 36;
-      font-name = "MesloLGS NF 12";
+      font-name = "Hack Nerd Font Mono 12";
       interface-style = "dark";
       profile-uuids = [ "e29d8a2a7f3956c6729ce526692fe833" ];
       restore-session = false;
