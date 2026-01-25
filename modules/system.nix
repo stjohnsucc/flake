@@ -27,7 +27,7 @@
   time.timeZone = "America/Detroit";
   fonts.packages = with pkgs; [
     corefonts
-    meslo-lgs-nf
+    nerd-fonts.hack
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
@@ -51,15 +51,6 @@
     };
   };
   services = {
-    flatpak = {
-      enable = true;
-      remotes = lib.mkOptionDefault [{
-        name = "flathub";
-        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-      }];
-      update.auto.enable = true;
-      uninstallUnmanaged = true;
-    };
     pipewire = {
       enable = true;
       pulse.enable = true;
@@ -97,7 +88,6 @@
         model = "epson-inkjet-printer-escpr2/Epson-WF-C869R_Series-epson-escpr2-en.ppd";
         ppdOptions = {
           PageSize = "Letter";
-          ColorModel = "Gray";
         };
       }
     ];
