@@ -18,16 +18,16 @@
   networking.hostName = "wsnorth";
 
   users = {
-    users.user = {
-      isNormalUser = true;
-      description = "User";
-      extraGroups = [ "networkmanager" ];
-      packages = with pkgs; [];
-    };
     users.evelyn = {
       isNormalUser = true;
       description = "Evelyn Park";
       extraGroups = [ "wheel" "networkmanager" ];
+      packages = with pkgs; [];
+    };
+    users.user = {
+      isNormalUser = true;
+      description = "User";
+      extraGroups = [ "networkmanager" ];
       packages = with pkgs; [];
     };
   };

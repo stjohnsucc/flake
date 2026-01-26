@@ -26,7 +26,7 @@ with lib.hm.gvariant;
 
     "org/gnome/shell" = {
       enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "dash-to-dock@micxgx.gmail.com" ];
-      favorite-apps = [ "google-chrome.desktop" "org.gnome.Ptyxis.desktop" "org.gnome.Nautilus.desktop" ];
+      favorite-apps = [ "chromium-browser.desktop" "org.gnome.Ptyxis.desktop" "org.gnome.Nautilus.desktop" ];
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {
