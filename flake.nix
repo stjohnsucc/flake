@@ -11,14 +11,16 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
-  outputs = { self, nixpkgs, lanzaboote, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, lanzaboote, home-manager, nix-flatpak, ... }@inputs: {
     nixosConfigurations = {
       wsnorth = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/wsnorth
+          nix-flatpak.nixosModules.nix-flatpak
           lanzaboote.nixosModules.lanzaboote
           ({ lib, ... }: {
             boot.loader.systemd-boot.enable = lib.mkForce false;
@@ -41,6 +43,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/wswest
+          nix-flatpak.nixosModules.nix-flatpak
           lanzaboote.nixosModules.lanzaboote
           ({ lib, ... }: {
             boot.loader.systemd-boot.enable = lib.mkForce false;
@@ -63,6 +66,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/wseast
+          nix-flatpak.nixosModules.nix-flatpak
           lanzaboote.nixosModules.lanzaboote
           ({ lib, ... }: {
             boot.loader.systemd-boot.enable = lib.mkForce false;
@@ -85,6 +89,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/wscentral
+          nix-flatpak.nixosModules.nix-flatpak
           lanzaboote.nixosModules.lanzaboote
           ({ lib, ... }: {
             boot.loader.systemd-boot.enable = lib.mkForce false;

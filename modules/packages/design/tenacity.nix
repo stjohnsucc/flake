@@ -1,6 +1,6 @@
 { ... }:
 {
-  environment.systemPackages = with pkgs; [
-    tenacity
+  services.flatpak.packages = [
+    "org.tenacityaudio.Tenacity"
   ];
 }

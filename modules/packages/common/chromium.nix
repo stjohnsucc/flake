@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    google-chrome
+    chromium
   ];
-  nixpkgs.config.google-chrome.commandLineArgs = [
+  nixpkgs.config.chromium.commandLineArgs = [
     "--enable-features=CapReferrerToOriginOnCrossOrigin,ContentSettingsPartitioning,EnableCsrssLockdown,HstsTopLevelNavigationsOnly,LocalNetworkAccessChecks:LocalNetworkAccessChecksWarn/false,LocalNetworkAccessChecksWebRTC,PartitionConnectionsByNetworkIsolationKey,ReduceAcceptLanguage,SplitCodeCacheByNetworkIsolationKey,SplitCacheByNetworkIsolationKey,SplitCacheByIncludeCredentials,SplitCacheByNavigationInitiator,StrictOriginIsolation"
     "--disable-features=AllowSwiftShaderFallback,AllowSoftwareGLFallbackDueToCrash,AutofillServerCommunication,BrowsingTopics,BrowsingTopicsDocumentAPI,BrowsingTopicsParameters,InterestFeedV2,NTPPopularSitesBakedInContent,UsePopularSitesSuggestions,LensStandalone,MediaDrmPreprovisioning,OptimizationHints,OptimizationHintsFetching,OptimizationHintsFetchingAnonymousDataConsent,OptimizationPersonalizedHintsFetching,OptimizationGuideModelDownloading,TextSafetyClassifier,PrivacySandboxSettings4,Reporting,CrashReporting,DocumentReporting,TabHoverCardImages,WebGPUBlobCache,WebGPUService"
     "--component-updater=--disable-pings"
@@ -16,7 +16,7 @@
     "--no-pings"
     "--ozone-platform=$XDG_SESSION_TYPE"
   ];
-  environment.etc."opt/chrome/policies/managed/default.json".text =
+  environment.etc."chromium/policies/managed/default.json".text =
     builtins.toJSON {
       "AIModeSettings" = 1;
       "AlternateErrorPagesEnabled" = false;
@@ -105,7 +105,7 @@
       "WebUsbAskForUrls" = ["https://grapheneos.org"];
     };
   
-  environment.etc."opt/chrome/policies/managed/extensions.json".text =
+  environment.etc."chromium/policies/managed/extensions.json".text =
     builtins.toJSON {
       ExtensionInstallForcelist = [
         "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
