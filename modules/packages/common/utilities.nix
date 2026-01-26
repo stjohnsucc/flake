@@ -20,6 +20,10 @@
     zola
   ];
 
+  services.flatpak.packages = [
+    "com.belmoussaoui.Authenticator"
+  ];
+
   programs = {
     yazi.enable = true;
   };
