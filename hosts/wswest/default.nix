@@ -24,6 +24,12 @@
       extraGroups = [ "wheel" "networkmanager" ];
       packages = with pkgs; [];
     };
+    users.marva = {
+      isNormalUser = true;
+      description = "Marva Haywood";
+      extraGroups = [ "networkmanager" ];
+      packages = with pkgs; [];
+    };
     users.user = {
       isNormalUser = true;
       description = "User";
