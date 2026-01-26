@@ -35,6 +35,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.evelyn = ./users/evelyn/home.nix;
+              users.user = ./users/user/home.nix;
             };
           }
         ];
@@ -57,6 +58,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              users.evelyn = ./users/evelyn/home.nix;
               users.user = ./users/user/home.nix;
             };
           }
@@ -80,6 +82,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              users.evelyn = ./users/evelyn/home.nix;
               users.user = ./users/user/home.nix;
             };
           }
@@ -103,6 +106,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              users.evelyn = ./users/evelyn/home.nix;
               users.user = ./users/user/home.nix;
             };
           }

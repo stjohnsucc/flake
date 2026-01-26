@@ -18,9 +18,9 @@
   networking.hostName = "wseast";
 
   users = {
-    users.admin = {
+    users.evelyn = {
       isNormalUser = true;
-      description = "Administrator";
+      description = "Evelyn Park";
       extraGroups = [ "wheel" "networkmanager" ];
       packages = with pkgs; [];
     };
