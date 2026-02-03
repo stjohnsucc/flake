@@ -51,6 +51,21 @@
     };
   };
   services = {
+    logind.settings.Login = {
+      HandleLidSwitch = "ignore";
+      IdleAction = "ignore";
+      HandlePowerKey = "ignore";
+      HandlePowerKeyLongPress = "ignore";
+      HandleRebootKey = "ignore";
+      HandleRebootKeyLongPress = "ignore";
+      HandleSuspendKey = "ignore";
+      HandleSuspendKeyLongPress = "ignore";
+      HandleHibernateKey = "ignore";
+      HandleHibernateKeyLongPress = "ignore";
+      HandleLidSwitchExternalPower = "ignore";
+      HandleLidSwitchDocked = "ignore";
+      HandleSecureAttentionKey = "ignore";
+    };
     flatpak = {
       enable = true;
       uninstallUnmanaged = true;
