@@ -24,6 +24,10 @@ with lib.hm.gvariant;
       switch-windows-backward = [ "<Shift><Alt>Tab" ];
     };
 
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = ":minimize,maximize,close";
+    };
+
     "org/gnome/shell" = {
       enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" "dash-to-dock@micxgx.gmail.com" ];
       favorite-apps = [ "chromium-browser.desktop" "org.gnome.Ptyxis.desktop" "org.gnome.Nautilus.desktop" ];
