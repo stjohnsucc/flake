@@ -66,11 +66,6 @@
       HandleLidSwitchDocked = "ignore";
       HandleSecureAttentionKey = "ignore";
     };
-    flatpak = {
-      enable = true;
-      uninstallUnmanaged = true;
-      update.onActivation = true;
-    };
     pipewire = {
       enable = true;
       pulse.enable = true;

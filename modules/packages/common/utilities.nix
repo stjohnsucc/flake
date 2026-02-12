@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    authenticator
     btop
     cmatrix
     dosfstools
@@ -18,10 +19,6 @@
     unzip
     yt-dlp
     zola
-  ];
-
-  services.flatpak.packages = [
-    "com.belmoussaoui.Authenticator"
   ];
 
   programs = {

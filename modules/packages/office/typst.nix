@@ -1,9 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    typesetter
     typst
-  ];
-  services.flatpak.packages = [
-    "net.trowell.typesetter"
   ];
 }

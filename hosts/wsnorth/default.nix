@@ -11,7 +11,6 @@
       ../../modules/editors
       ../../modules/packages/common
       ../../modules/packages/design
-      ../../modules/packages/games
       ../../modules/packages/net
       ../../modules/packages/office
     ];
