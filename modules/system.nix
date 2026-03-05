@@ -128,5 +128,9 @@
     git
     sbctl
     via
+    vial
+    qmk
+    qmk_hid
+    qmk-udev-rules
   ];
 }
