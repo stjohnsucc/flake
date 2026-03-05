@@ -51,6 +51,7 @@
     };
   };
   services = {
+    udev.packages = with pkgs; [ via ];
     logind.settings.Login = {
       HandleLidSwitch = "ignore";
       IdleAction = "ignore";
@@ -93,20 +94,23 @@
       };
     };
   };
-  hardware.printers = {
-    ensurePrinters = [
-      {
-        name = "EPSON_WF-C869R_Series";
-        description = "EPSON_WF-C869R_Series";
-        location = "Home";
-        deviceUri = "dnssd://EPSON%20WF-C869R%20Series._ipp._tcp.local/?uuid=cfe92100-67c4-11d4-a45f-f8d0272737f5";
-        model = "epson-inkjet-printer-escpr2/Epson-WF-C869R_Series-epson-escpr2-en.ppd";
-        ppdOptions = {
-          PageSize = "Letter";
-        };
-      }
-    ];
-    ensureDefaultPrinter = "EPSON_WF-C869R_Series";
+  hardware = {
+    keyboard.qmk.enable = true;
+    printers = {
+      ensurePrinters = [
+        {
+          name = "EPSON_WF-C869R_Series";
+          description = "EPSON_WF-C869R_Series";
+          location = "Home";
+          deviceUri = "dnssd://EPSON%20WF-C869R%20Series._ipp._tcp.local/?uuid=cfe92100-67c4-11d4-a45f-f8d0272737f5";
+          model = "epson-inkjet-printer-escpr2/Epson-WF-C869R_Series-epson-escpr2-en.ppd";
+          ppdOptions = {
+            PageSize = "Letter";
+          };
+        }
+      ];
+      ensureDefaultPrinter = "EPSON_WF-C869R_Series";
+    };
   };
   security.rtkit.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -123,5 +127,6 @@
     curl
     git
     sbctl
+    via
   ];
 }
