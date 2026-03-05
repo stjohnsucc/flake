@@ -11,8 +11,8 @@
     "--disable-crash-reporter"
     "--extension-content-verification=enforce_strict"
     "--extensions-install-verification=enforce_strict"
-    "--js-flags=--jitless"
-    "--js-flags=--disable-optimizing-compilers"
+    #"--js-flags=--jitless"
+    #"--js-flags=--disable-optimizing-compilers"
     "--no-pings"
     "--ozone-platform=$XDG_SESSION_TYPE"
   ];
