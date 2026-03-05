@@ -51,7 +51,7 @@
     };
   };
   services = {
-    udev.packages = with pkgs; [ via ];
+    udev.packages = with pkgs; [ via qmk-udev-rules ];
     logind.settings.Login = {
       HandleLidSwitch = "ignore";
       IdleAction = "ignore";
